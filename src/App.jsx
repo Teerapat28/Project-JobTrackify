@@ -1,12 +1,12 @@
-
+import Landing from "./pages/Landing";
+import styled from "styled-components";
 
 function App() {
-
   return (
     <>
-      <h1>jobster</h1>
+      <Landing />
     </>
-  )
+  );
 }
 
-export default App
+export default App;

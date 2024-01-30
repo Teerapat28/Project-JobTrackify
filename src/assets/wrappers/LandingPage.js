@@ -13,7 +13,7 @@ const Wrapper = styled.main`
     min-height: calc(100vh - var(--nav-height));
     display: grid;
     align-items: center;
-    margin-top: -3rem;
+    /* margin-top: -3rem; */
   }
   h1 {
     font-weight: 700;
