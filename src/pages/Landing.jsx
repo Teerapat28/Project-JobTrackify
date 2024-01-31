@@ -1,6 +1,7 @@
 import React from "react";
 import Wrapper from "../assets/wrappers/LandingPage";
 import { Logo, Main } from "../assets/components";
+import { Link } from "react-router-dom";
 
 const Landing = () => {
   return (
@@ -19,7 +20,9 @@ const Landing = () => {
             of your progress? Look no further – JobTrackify is here to simplify
             and streamline your job search journey.
           </p>
-          <button className="btn btn-hero">Login/Register</button>
+          <Link to="/register" className="btn btn-hero">
+            Login/Register
+          </Link>
         </div>
         <Main />
       </div>

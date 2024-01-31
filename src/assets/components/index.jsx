@@ -1,5 +1,6 @@
 import Logo from "./Logo";
 import Main from "./Main";
+import FormRow from "./FormRow";
 
-export { Logo };
-export { Main };
+export { Logo,Main,FormRow };
+
