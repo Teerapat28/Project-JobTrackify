@@ -36,3 +36,5 @@ export const updateUserThunk = async (url, user, thunkAPI) => {
     return thunkAPI.rejectWithValue(error.response.data.msg);
   }
 };
+
+
