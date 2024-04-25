@@ -4,7 +4,7 @@ import Wrapper from "../wrappers/Job";
 import { useDispatch } from "react-redux";
 import JobInfo from "./Jobinfo";
 import moment from "moment";
-import { deleteJob } from "../../features/job/jobSlice";
+import { deleteJob, setEditJob } from "../../features/job/jobSlice";
 
 const Job = ({
   _id,
@@ -17,7 +17,7 @@ const Job = ({
 }) => {
   const dispatch = useDispatch();
 
-  const date = moment(createdAt).format('MMM Do, YYYY');
+  const date = moment(createdAt).format("MMM Do, YYYY");
 
   return (
     <Wrapper>
@@ -30,9 +30,9 @@ const Job = ({
       </header>
       <div className="content">
         <div className="content-center">
-          <JobInfo icon={<FaLocationArrow/>} text={jobLocation} />
-          <JobInfo icon={<FaCalendarAlt/>} text={date} />
-          <JobInfo icon={<FaBriefcase/>} text={jobType} />
+          <JobInfo icon={<FaLocationArrow />} text={jobLocation} />
+          <JobInfo icon={<FaCalendarAlt />} text={date} />
+          <JobInfo icon={<FaBriefcase />} text={jobType} />
           <div className={`status ${status}`}>{status}</div>
         </div>
         <footer>
@@ -40,7 +40,18 @@ const Job = ({
             <Link
               to="/add-job"
               className="btn edit-btn"
-              onClick={() => console.log("edit job")}
+              onClick={() =>
+                dispatch(
+                  setEditJob({
+                    editJobId: _id,
+                    position,
+                    company,
+                    jobLocation,
+                    jobType,
+                    status,
+                  })
+                )
+              }
             >
               Edit{" "}
             </Link>
